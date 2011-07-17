@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.ducktools.eclipse.tycho.samples</groupId>
+  <artifactId>tycho-samples-parent</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+
+  <packaging>pom</packaging>
+  <name>Tycho Samples: Parent</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <org.eclipse.tycho.version>0.12.0</org.eclipse.tycho.version>
+  </properties>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${org.eclipse.tycho.version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <pomDependencies>consider</pomDependencies>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${org.eclipse.tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+
+    </plugins>
+
+    <pluginManagement>
+
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.6</source>
+            <target>1.6</target>
+          </configuration>
+        </plugin>
+
+      </plugins>
+
+    </pluginManagement>
+
+  </build>
+
+  <repositories>
+
+    <repository>
+      <id>eclipse.repo</id>
+      <name>Eclipse p2 Repository</name>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/indigo</url>
+    </repository>
+
+    <repository>
+      <id>swtbot.repo</id>
+      <name>SWTBot p2 Repository</name>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site</url>
+    </repository>
+
+  </repositories>
+
+</project>
