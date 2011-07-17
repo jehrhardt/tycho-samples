@@ -4,7 +4,7 @@ Bundle-Name: Tycho Samples: UI Plugin
 Bundle-SymbolicName: org.ducktools.eclipse.tycho.samples.ui; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Jan Ehrhardt
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.ui
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
+ org.eclipse.ui;bundle-version="[3.5.0,4.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.slf4j;version="[1.6.0,2.0.0)"
