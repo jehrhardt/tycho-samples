@@ -100,17 +100,17 @@ public class HelloWorldView extends ViewPart {
       return getName();
     }
 
-    public Object getAdapter(Class key) {
+    public Object getAdapter(@SuppressWarnings("rawtypes") Class key) {
       return null;
     }
   }
 
   class TreeParent extends TreeObject {
-    private ArrayList children;
+    private ArrayList<TreeObject> children;
 
     public TreeParent(String name) {
       super(name);
-      children = new ArrayList();
+      children = new ArrayList<TreeObject>();
     }
 
     public void addChild(TreeObject child) {
