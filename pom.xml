@@ -73,6 +73,7 @@
 
   <modules>
     <module>org.ducktools.eclipse.tycho.samples.ui</module>
+    <module>org.ducktools.eclipse.tycho.samples.ui.test</module>
   </modules>
 
   <repositories>
