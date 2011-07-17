@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Hello World Category"
+            id="org.ducktools.eclipse.tycho.samples.ui">
+      </category>
+      <view
+            name="Hello World"
+            icon="icons/sample.gif"
+            category="org.ducktools.eclipse.tycho.samples.ui"
+            class="org.ducktools.eclipse.tycho.samples.ui.views.HelloWorldView"
+            id="org.ducktools.eclipse.tycho.samples.ui.views.HelloWorldView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="org.ducktools.eclipse.tycho.samples.ui.views.HelloWorldView"
+               relationship="stack"
+               relative="org.eclipse.jdt.ui.PackageExplorer"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>
