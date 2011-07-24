@@ -36,25 +36,25 @@
         <extensions>true</extensions>
       </plugin>
 
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-source-plugin</artifactId>
-        <version>${org.eclipse.tycho.version}</version>
-        <executions>
-          <execution>
-            <id>plugin-source</id>
-            <goals>
-              <goal>plugin-source</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
     </plugins>
 
     <pluginManagement>
 
       <plugins>
+
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-source-plugin</artifactId>
+          <version>${org.eclipse.tycho.version}</version>
+          <executions>
+            <execution>
+              <id>plugin-source</id>
+              <goals>
+                <goal>plugin-source</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -63,6 +63,12 @@
             <source>1.6</source>
             <target>1.6</target>
           </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>2.3</version>
         </plugin>
 
       </plugins>
@@ -74,6 +80,7 @@
   <modules>
     <module>org.ducktools.eclipse.tycho.samples.ui</module>
     <module>org.ducktools.eclipse.tycho.samples.ui.test</module>
+    <module>org.ducktools.eclipse.tycho.samples.org.codehaus.groovy</module>
   </modules>
 
   <repositories>
