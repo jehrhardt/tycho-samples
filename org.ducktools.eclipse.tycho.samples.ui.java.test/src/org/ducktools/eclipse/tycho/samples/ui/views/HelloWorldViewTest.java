@@ -27,10 +27,10 @@ public class HelloWorldViewTest {
   public void it_should_have_hello_world_as_title() {
     // given: a hello world view in the Java perspective
     bot.perspectiveById("org.eclipse.jdt.ui.JavaPerspective").activate();
-    SWTBotView helloWorldView = bot.viewById("org.ducktools.eclipse.tycho.samples.ui.views.HelloWorldView");
+    SWTBotView helloWorldView = bot.viewById("org.ducktools.eclipse.tycho.samples.ui.views.HelloWorldJavaView");
 
     // expected: the title is 'Hello World"
-    assertEquals("Hello World", helloWorldView.getTitle());
+    assertEquals("Java Hello World", helloWorldView.getTitle());
   }
 
 }
