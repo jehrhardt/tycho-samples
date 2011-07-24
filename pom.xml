@@ -80,6 +80,7 @@
   <modules>
     <module>org.ducktools.eclipse.tycho.samples.ui.java</module>
     <module>org.ducktools.eclipse.tycho.samples.ui.java.test</module>
+    <module>org.ducktools.eclipse.tycho.samples.ui.groovy</module>
     <module>org.ducktools.eclipse.tycho.samples.org.codehaus.groovy</module>
   </modules>
 

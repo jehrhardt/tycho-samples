@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tycho Samples: Groovy UI Plugin
+Bundle-SymbolicName: org.ducktools.eclipse.tycho.samples.ui.groovy; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Jan Ehrhardt
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.ducktools.eclipse.tycho.samples.ui.java;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: groovy.lang;version="[1.8.0,1.9.0)",
+ org.codehaus.groovy.reflection;version="[1.8.0,1.9.0)",
+ org.codehaus.groovy.runtime;version="[1.8.0,1.9.0)",
+ org.codehaus.groovy.runtime.callsite;version="[1.8.0,1.9.0)",
+ org.codehaus.groovy.runtime.typehandling;version="[1.8.0,1.9.0)"

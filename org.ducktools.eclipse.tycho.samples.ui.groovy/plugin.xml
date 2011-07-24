@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Groovy Hello World"
+            icon="icons/sample.gif"
+            category="org.ducktools.eclipse.tycho.samples.ui"
+            class="org.ducktools.eclipse.tycho.samples.ui.groovy.views.HelloWorld"
+            id="org.ducktools.eclipse.tycho.samples.ui.views.HelloWorldGroovyView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="org.ducktools.eclipse.tycho.samples.ui.views.HelloWorldGroovyView"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ResourceNavigator"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>
