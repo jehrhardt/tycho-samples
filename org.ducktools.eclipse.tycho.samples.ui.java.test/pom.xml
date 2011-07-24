@@ -9,10 +9,10 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>org.ducktools.eclipse.tycho.samples.ui.test</artifactId>
+  <artifactId>org.ducktools.eclipse.tycho.samples.ui.java.test</artifactId>
 
   <packaging>eclipse-test-plugin</packaging>
-  <name>Tycho Samples: UI Test Plugin</name>
+  <name>Tycho Samples: Java UI Test Plugin</name>
 
   <build>
 

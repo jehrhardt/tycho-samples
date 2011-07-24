@@ -8,10 +8,10 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>org.ducktools.eclipse.tycho.samples.ui</artifactId>
+  <artifactId>org.ducktools.eclipse.tycho.samples.ui.java</artifactId>
 
   <packaging>eclipse-plugin</packaging>
-  <name>Tycho Samples: UI Plugin</name>
+  <name>Tycho Samples: Java UI Plugin</name>
 
   <build>
 

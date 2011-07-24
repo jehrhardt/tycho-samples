@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Tycho Samples: UI Plugin
-Bundle-SymbolicName: org.ducktools.eclipse.tycho.samples.ui; singleton:=true
+Bundle-Name: Tycho Samples: Java UI Plugin
+Bundle-SymbolicName: org.ducktools.eclipse.tycho.samples.ui.java; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Jan Ehrhardt
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
