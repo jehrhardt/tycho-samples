@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>tycho-samples-parent</artifactId>
+    <groupId>org.ducktools.eclipse.tycho.samples</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>org.ducktools.eclipse.tycho.samples.ui.groovy.test</artifactId>
+
+  <packaging>eclipse-test-plugin</packaging>
+  <name>Tycho Samples: Groovy UI Test Plugin</name>
+
+  <properties>
+    <ui.test.vmargs>-XstartOnFirstThread</ui.test.vmargs>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <version>0.5-groovy-1.8</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${org.eclipse.tycho.version}</version>
+        <configuration>
+          <useUIHarness>true</useUIHarness>
+          <argLine>${ui.test.vmargs}</argLine>
+          <includes>
+            <include>**/*feature.*</include>
+          </includes>
+          <dependencies>
+            <dependency>
+              <type>p2-installable-unit</type>
+              <artifactId>org.eclipse.jdt.feature.group</artifactId>
+              <version>[3.7,3.8)</version>
+            </dependency>
+          </dependencies>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.spockframework</groupId>
+                  <artifactId>spock-core</artifactId>
+                  <version>0.5-groovy-1.8</version>
+                  <type>jar</type>
+                  <destFileName>spock-core.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+              <outputDirectory>${project.basedir}</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.gmaven</groupId>
+        <artifactId>gmaven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <providerSelection>1.7</providerSelection>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>1.8.1</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <profiles>
+
+    <profile>
+      <id>macosx</id>
+      <activation>
+        <os>
+          <name>mac os x</name>
+          <family>mac</family>
+        </os>
+      </activation>
+      <properties>
+        <ui.test.vmargs>-XstartOnFirstThread</ui.test.vmargs>
+      </properties>
+    </profile>
+
+  </profiles>
+
+</project>
