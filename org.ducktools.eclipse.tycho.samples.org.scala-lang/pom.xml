@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>tycho-samples-parent</artifactId>
+    <groupId>org.ducktools.eclipse.tycho.samples</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>org.ducktools.eclipse.tycho.samples.org.scala-lang</artifactId>
+  <version>2.9.0</version>
+
+  <packaging>eclipse-plugin</packaging>
+  <name>Tycho Samples: Scala Bundle</name>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.scala-lang</groupId>
+                  <artifactId>scala-library</artifactId>
+                  <version>${scala.version}</version>
+                  <type>jar</type>
+                  <destFileName>scala-library.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+              <outputDirectory>${project.basedir}</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+</project>
